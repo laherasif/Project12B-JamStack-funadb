@@ -19,8 +19,8 @@ const  Card = () =>  {
                 <tr>
                   <th>
                     <span className="custom-checkbox">
+                      {/* <label htmlFor="selectAll" /> */}
                       <input type="checkbox" id="selectAll" />
-                      <label htmlFor="selectAll" />
                     </span>
                   </th>
                   <th>Name</th>
