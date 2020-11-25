@@ -71,16 +71,9 @@ const Home: React.FC<Todos> = () => {
   };
 
 
-  // const Onchange = (e) => {
-
-  //   setdata({ data: { ...data, [e.currentTarget.name]: e.currentTarget.value } })
-
-  // }
 
 
 
-
-  console.log("edit data", data)
   return (
     <div>
       <div className="container-xl">
@@ -243,7 +236,7 @@ const Home: React.FC<Todos> = () => {
           >
 
             {({
-              setSubmitting, errors, isSubmitting, touched }) => (
+               errors, touched }) => (
 
                 <Form>
                   <div className="modal-header">
