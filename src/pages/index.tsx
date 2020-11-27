@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, FormEventHandler } from 'react'
 import './index.css'
 import Modal from 'react-awesome-modal'
 import api from './api/api'
@@ -70,7 +70,7 @@ const Home: React.FC<Todos> = () => {
   }
 
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setdata(prevState => ({
       ...prevState,
@@ -263,17 +263,17 @@ const Home: React.FC<Todos> = () => {
                   </div>
                   <div className="modal-body">
                     <div className="form-group">
-                      <label htmlFor="name">Name</label>
+                      <label htmlFor="fname">Name</label>
                       <Field type="text" value={data.name}
                         className={'form-control' + (errors.name && touched.name ? ' is-invalid' : '')}
                         onChange={handleChange}
-                        id="name" name="name" />
+                        id="fname" name="name" />
                       <ErrorMessage name="name" component="div" className="invalid-feedback" />
 
                     </div>
                     <div className="form-group">
-                      <label htmlFor="email">Email</label>
-                      <Field type="email" value={data.email} onChange={handleChange} className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} id="email" name="email" />
+                      <label htmlFor="femail">Email</label>
+                      <Field type="email" value={data.email} onChange={handleChange} className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} id="femail" name="email" />
                       <ErrorMessage name="email" component="div" className="invalid-feedback" />
                     </div>
 
@@ -299,9 +299,9 @@ const Home: React.FC<Todos> = () => {
             <button type="button" className="close" onClick={() => setdel({ del: false, data: "" })} >×</button>
           </div>
           <div className="modal-body">
-            <label htmlFor="name">Are You Sure !</label>
+            <label htmlFor="dname">Are You Sure !</label>
 
-            <label htmlFor="email">You want yo Delete it!</label>
+            <label htmlFor="demail">You want yo Delete it!</label>
           </div>
 
           <div className="modal-footer">
