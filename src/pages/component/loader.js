@@ -7,7 +7,9 @@ const  Card = () =>  {
   const [Data, setData] = useState([])
 
     useEffect(() => {
-        api.getAll()
+        fetch('/.netlify/functions/get').then(response => {
+            return response.json()
+        })
        .then(data => {
              setData(data)
            });
