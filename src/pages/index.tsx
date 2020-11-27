@@ -56,7 +56,7 @@ const Home: React.FC<Todos> = () => {
   const deletTask = () => {
     fetch('/.netlify/functions/delete', {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify({ id : del.data}),
     }).then(response => {
       return response.json()
     })
