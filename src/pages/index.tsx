@@ -31,10 +31,13 @@ const Home: React.FC<Todos> = () => {
   const [del, setdel] = useState({ del: false, data: "" })
 
   useEffect(() => {
-    api.getAll()
-      .then(data => {
-        setData(data)
-      });
+    fetch('/.netlify/functions/get').then(response => {
+      return response.json()
+    })
+       .then(data => {
+            setData(data)
+          });
+  
 
     setTimeout(() => {
       setLoader(false)
@@ -51,7 +54,12 @@ const Home: React.FC<Todos> = () => {
 
 
   const deletTask = () => {
-    api.del({ id: del.data })
+    fetch('/.netlify/functions/delete', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }).then(response => {
+      return response.json()
+    })
     setTimeout(() => {
       setdel({ del: false, data: "" })
       setOnlion(true)
@@ -153,7 +161,12 @@ const Home: React.FC<Todos> = () => {
             }
             onSubmit={(values, { setSubmitting }) => {
               console.log(values);
-              api.create(values)
+              fetch('/.netlify/functions/add', {
+                body: JSON.stringify(values),
+                method: 'POST'
+            }).then(response => {
+                return response.json()
+            })
               setTimeout(() => {
                 setmodal(false)
                 setOnlion(true)
@@ -222,7 +235,12 @@ const Home: React.FC<Todos> = () => {
                   name : data.name,
                   email : data.email
               }
-              api.update(VluesData)
+              fetch(`/.netlify/functions/update`, {
+                body: JSON.stringify(VluesData),
+                method: 'POST'
+              }).then(response => {
+                return response.json()
+              })
               setOnlion(true)
               setLoader(true)
               setTimeout(() => {
