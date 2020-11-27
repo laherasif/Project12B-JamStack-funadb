@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FormEventHandler } from 'react'
 import './index.css'
 import Modal from 'react-awesome-modal'
-import api from './api/api'
+// import api from './api/api'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Card from './component/loader'
 import { Formik, Field, ErrorMessage, Form } from 'formik'
