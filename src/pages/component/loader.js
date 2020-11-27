@@ -1,6 +1,6 @@
 import React,{useEffect , useState} from 'react'
 import Skeleton from "react-loading-skeleton";
-import api from '../api/api'
+
 
 const  Card = () =>  {
 
