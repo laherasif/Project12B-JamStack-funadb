@@ -4,12 +4,9 @@
 const faunadb = require('faunadb'),
 q = faunadb.query;
 
-exports.handler = async (event, context) => {
+exports.handler = async () => {
 try {
 
-//   if (event.httpMethod !== " POST") {
-//     return { statusCode: 405, body: "Method Not Allowed" };
-//   }
 
 
 

@@ -40,7 +40,7 @@ const  Card = () =>  {
 
                     {Array(Data.length)
                         .fill()
-                        .map((item, index) => {
+                        .map((index) => {
                             return (
                                 <tr key={index}>
                                     <td>
@@ -61,36 +61,7 @@ const  Card = () =>  {
                            </tbody>
                            </table>
 
-            {/* <div className="row">
-                <div className="col-md-12">
-                    <div className="main-todo-input-wrap">
-                        <div className="main-todo-input fl-wrap todo-listing">
-
-                            {
-                                 Array(9)
-                                .fill()
-                                .map((item, index) =>  {
-
-                                    return (
-                                        <ul id="list-items" >
-                                            <li>
-                                                <Skeleton height={20} />
-                                            </li>
-
-
-
-
-                                        </ul>
-
-                                    )
-                                })
-                            
-
-                                }
-                            </div>
-                    </div>
-                </div>
-            </div> */}
+         
         </div>
     )
 }

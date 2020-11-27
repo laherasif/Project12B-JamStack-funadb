@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FormEventHandler } from 'react'
+import React, { useState, useEffect } from 'react'
 import './index.css'
 import Modal from 'react-awesome-modal'
 // import api from './api/api'

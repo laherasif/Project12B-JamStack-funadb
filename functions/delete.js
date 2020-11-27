@@ -13,18 +13,13 @@ exports.handler = async (event) => {
 
     let reqObj = JSON.parse(event.body);
 
-    console.log("re" , reqObj)
 
     var adminClient = new faunadb.Client({ secret: 'fnAD6OD-QyACBcMFsavYmk2L8OkTxK5zWMj2r_Y9' });
     const result = await adminClient.query(
       q.Delete(q.Ref(q.Collection("crud"), reqObj.id))
     )
 
-    // console.log("Entry Created and Inserted in Container: " + result.ref.id);
-
-
-    // return result.ref.data
-  
+ 
 
     return {
       statusCode: 200,
