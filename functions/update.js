@@ -1,5 +1,7 @@
 
-  
+  require("dotenv").config({
+    path: `.env`,
+  })
 
 const faunadb = require('faunadb'),
 q = faunadb.query;
@@ -12,8 +14,7 @@ try {
   }
 
   let reqObj = JSON.parse(event.body);
-
-  var adminClient = new faunadb.Client({ secret: 'fnAD6OD-QyACBcMFsavYmk2L8OkTxK5zWMj2r_Y9' });
+  var adminClient = new faunadb.Client({ secret: process.env.FAUNA_SECRET_KY });
       const result = await adminClient.query(
         q.Update(
           q.Ref(q.Collection('crud'), reqObj.id ),
