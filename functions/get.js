@@ -1,7 +1,4 @@
-require("dotenv").config({
-  path: `.env`,
-})
-  
+
 
 const faunadb = require('faunadb'),
 q = faunadb.query;
@@ -11,7 +8,7 @@ try {
 
 
 
-  var adminClient = new faunadb.Client({ secret: process.env.FAUNA_SECRET_KY });
+  var adminClient = new faunadb.Client({ secret: 'fnAD6OD-QyACBcMFsavYmk2L8OkTxK5zWMj2r_Y9' });
   const result = await adminClient.query(
     q.Map(
       q.Paginate(q.Match(q.Index('data'))),
